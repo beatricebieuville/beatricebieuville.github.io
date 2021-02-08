@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="no">
-    
+
   <head>
       <meta charset="utf-8">
-      
+
       <!-- HER KAN DU ENDRA NAMNET TIL NETTSIDA ved å endra det kvite -->
       <title>Namn</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.6/Tone.js"></script>
-      
-      
+
+
       <!-- HER KAN DU ENDRA STILEN TIL APPEN */ -->
       <style>
           body {
@@ -21,7 +21,7 @@
               /* HER KAN DU ENDRA FONTEN TIL TITTELEN */
               font-family:sans-serif;
           }
-          #knappen{
+          .knapp {
               /* HER KAN DU ENDRA FARGEN TIL KNAPPENE */
               background-color: yellowgreen;
               /* HER KAN DU ENDRA FARGEN TIL TEKSTEN I KNAPPENE */
@@ -37,43 +37,43 @@
               /* HER KAN DU ENDRA FARGEN TIL SLIDEREN */
               background: #4CAF50;
             }
-          
+
       </style>
-      
+
   </head>
-    
+
     <body>
-        
+
         <!-- HER KAN DU ENDRA TITTELEN TIL APPEN -->
         <h1> TITTEL</h1>
         <!-- HER KAN DU ENDRA BESKRIVELSEN AV APPEN -->
         <p>Beskrivelse av appen</p>
-        
+
         <!-- HER KAN DU ENDRA NAMNET TIL KNAPPEN ved å endra det kvite -->
-        <button id="knapp1">Namn knappen</button>
+        <button id="knapp1" class="knapp">Namn knappen</button>
         <!-- DU KAN ENDRA MINIMUM OG MAKSIMUM VERDIENE -->
         <input type="range" min="0.25" max="20" value="5" class="slider" id="range1"><br><br>
-        
+
         <!-- HER KAN DU ENDRA NAMNET TIL KNAPPEN ved å endra det kvite -->
-        <button id="knapp2">Namn knappen</button>
+        <button id="knapp2" class="knapp">Namn knappen</button>
         <!-- DU KAN ENDRA MINIMUM OG MAKSIMUM VERDIENE -->
         <input type="range" min="0.25" max="20" value="5" class="slider" id="range2">
-        
+
         <!-- SCRIPT, IKKJE ENDRA DET -->
-        <script type="text/javascript"> 
-           
-           /* SKRIV INN ADRESSA TIL DIN EIGEN LYD #1 */       
-            const lyd1 = new Tone.Player("https://tonejs.github.io/audio/berklee/gong_1.mp3").toDestination();
-            /* SKRIV INN ADRESSA TIL DIN EIGEN LYD #2 */       
+        <script type="text/javascript">
+
+           /* SKRIV INN ADRESSA TIL DIN EIGEN LYD #1 */
+            const lyd1 = new Tone.Player("gong_1.mp3").toDestination();
+            /* SKRIV INN ADRESSA TIL DIN EIGEN LYD #2 */
             const lyd2 = new Tone.Player("https://beatricebieuville.github.io/gong_1.mp3").toDestination();
-            
+
             /* DENNE DELEN AV KODEN SEIER AT LYDEN STARTAR NÅR KNAPPEN BLIR TRYKT PÅ, IKKJE ENDRA DET */
             const lydene = [lyd1, lyd2];
             function playSound(range,element,button){
                     var slider = document.getElementById(arguments[0]);
                     slider.oninput = function() {
                       element.playbackRate = this.value;
-                    
+
                     }
                     document.getElementById(arguments[2]).addEventListener("click", function() {
                       if (element.state !== 'started') {
@@ -89,8 +89,8 @@
                 const lyd = lydene[i-1];
                  const knapp = String("knapp" + i);
                  playSound(range, lyd, knapp);
-                 };       
-            
+                 };
+
         </script>
-    
+
     </body>
