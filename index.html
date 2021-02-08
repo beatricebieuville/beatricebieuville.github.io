@@ -37,9 +37,12 @@
               /* HER KAN DU ENDRA FARGEN TIL SLIDEREN */
               background: #4CAF50;
             }
-
+          
       </style>
-
+      <script>
+      const address = "https://beatricebieuville.github.io/";
+      // address = "";
+      </script>
   </head>
 
     <body>
@@ -50,7 +53,7 @@
         <p>Beskrivelse av appen</p>
 
         <!-- HER KAN DU ENDRA NAMNET TIL KNAPPEN ved å endra det kvite -->
-        <button id="knapp1" class="knapp">Namn knappen</button>
+        <button id="knapp1" class="knapp extra-knapp">Namn knappen</button>
         <!-- DU KAN ENDRA MINIMUM OG MAKSIMUM VERDIENE -->
         <input type="range" min="0.25" max="20" value="5" class="slider" id="range1"><br><br>
 
@@ -63,9 +66,9 @@
         <script type="text/javascript">
 
            /* SKRIV INN ADRESSA TIL DIN EIGEN LYD #1 */
-            const lyd1 = new Tone.Player("gong_1.mp3").toDestination();
+            const lyd1 = new Tone.Player( address + "gong_1.mp3").toDestination();
             /* SKRIV INN ADRESSA TIL DIN EIGEN LYD #2 */
-            const lyd2 = new Tone.Player("https://beatricebieuville.github.io/gong_1.mp3").toDestination();
+            const lyd2 = new Tone.Player( address + "gong_1.mp3").toDestination();
 
             /* DENNE DELEN AV KODEN SEIER AT LYDEN STARTAR NÅR KNAPPEN BLIR TRYKT PÅ, IKKJE ENDRA DET */
             const lydene = [lyd1, lyd2];
